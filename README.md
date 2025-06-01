@@ -1,5 +1,5 @@
 # deepframe-web
-# 🚀 Front-end Development with Next.js 13 & FastAPI
+# 🚀 Front-end Development with Next.js 13 
 
 This project is a modern front-end application built with **Next.js 13** and **TypeScript**, integrated with a **FastAPI** backend for handling authentication. It includes fully functional **login** and **signup** pages, secure API requests using **Axios**, and stores JWT tokens in the browser's **localStorage**.
 
