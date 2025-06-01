@@ -133,7 +133,7 @@ npm run dev
 
 Demonstration videos are located in the `video/` folder:
 
-- **Project Overview** – How the app runs  
+- **How code runs** – How the app runs  
 - **Signup Page** – Testing the signup functionality in the browser  
 - **Login Page** – Testing the login process  
 - **JWT Token Check** – Inspecting localStorage for token using DevTools  
