@@ -56,7 +56,7 @@ Open the browser and visit:
 ```text
 http://localhost:3000
 ```
-<prelang="markdown">
+
 ## 📁 Folder Structure
 In next.js it is convention to use page.tsx name for each page.Folder(ai-next-app) structre looks like this;
 ```
@@ -73,7 +73,7 @@ ai-next-app/
 ├── .next/
 ├── node_modules/
 ├── .eslintrc.json
-```</pre>
+```
 ## 🔐 Pages Implemented
 
 ### ✅ Login Page
