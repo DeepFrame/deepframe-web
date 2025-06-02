@@ -12,6 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // new
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -27,7 +28,7 @@ const Login = () => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
-      params.append('username', email);  // Backend matches email as username
+      params.append('username', email);
       params.append('password', password);
 
       const response = await axiosInstance.post('/auth/login', params, {
@@ -40,7 +41,7 @@ const Login = () => {
       if (token) {
         localStorage.setItem('token', token);
         alert('Login successful!');
-        router.push('/next_to_login');  // Update with your actual post-login route
+        router.push('/next_to_login');
       } else {
         alert('Login failed: No token received');
       }
@@ -59,6 +60,7 @@ const Login = () => {
       <div className="cont">
         <div className="form sign-in">
           <h2>Login Here!</h2>
+
           <div className="input-group">
             <label>Email</label>
             <input
@@ -68,18 +70,29 @@ const Login = () => {
               disabled={loading}
             />
           </div>
-          <div className="input-group">
+
+          <div className="input-group password-group">
             <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              disabled={loading}
-            />
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={loading}
+              />
+              <span
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </span>
+            </div>
           </div>
+
           <Link href="/forget_password">
             <p className="text-center">Forgot password?</p>
           </Link>
+
           <button
             type="button"
             className="submit"

@@ -94,4 +94,29 @@
 .container {
   height: 500px;
 }
+/* Only for password input to maintain styling */
+.password-group {
+  position: relative;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #007bff;
+  user-select: none;
+}
+
 /* Remove all animation or transform transitions */
