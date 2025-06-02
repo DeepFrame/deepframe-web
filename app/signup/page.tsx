@@ -13,6 +13,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async () => {
     if (!name || !email || !password) {
@@ -58,6 +59,7 @@ const Signup = () => {
       <div className="cont">
         <div className="form sign-in">
           <h2>SignUp Here!</h2>
+
           <div className="input-group">
             <label>User Name</label>
             <input
@@ -67,6 +69,7 @@ const Signup = () => {
               disabled={loading}
             />
           </div>
+
           <div className="input-group">
             <label>Email</label>
             <input
@@ -76,14 +79,23 @@ const Signup = () => {
               disabled={loading}
             />
           </div>
-          <div className="input-group">
+
+          <div className="input-group password-group">
             <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              disabled={loading}
-            />
+            <div className="password-wrapper">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                disabled={loading}
+              />
+              <span
+                className="toggle-password"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </span>
+            </div>
           </div>
 
           <button
