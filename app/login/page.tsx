@@ -28,13 +28,12 @@ const Login = () => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
-      params.append('username', email);
+      params.append('email', email);
       params.append('password', password);
 
-      const response = await axiosInstance.post('/auth/login', params, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
+      const response = await axiosInstance.post('/auth/login', {
+        email,
+        password,
       });
 
       const token = response.data.access_token;
